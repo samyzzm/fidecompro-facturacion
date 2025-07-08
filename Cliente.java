@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class Cliente {
     private String nombre;
     private String telefono;
@@ -5,6 +7,11 @@ public class Cliente {
     public Cliente(String nombre, String telefono) {
         this.nombre = nombre;
         this.telefono = telefono;
+    }
+
+    public void guardar() {
+        // Aquí iría la lógica real para guardar cliente
+        JOptionPane.showMessageDialog(null, "Cliente '" + nombre + "' guardado exitosamente.");
     }
 
     @Override
