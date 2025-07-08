@@ -29,15 +29,20 @@ public class FidecomproApp {
         panel.add(btnLogin);
 
         btnLogin.addActionListener(e -> {
-            UsuarioAdmin admin = new UsuarioAdmin("admin", "1234");
-            if (admin.login(txtUsuario.getText(), new String(txtContrasena.getPassword()))) {
-                usuarioActual = admin;
-                frame.dispose();
-                mostrarMenu();
-            } else {
-                JOptionPane.showMessageDialog(frame, "Credenciales incorrectas");
-            }
-        });
+    String user = txtUsuario.getText();
+    String pass = new String(txtContrasena.getPassword());
+
+    Usuario admin = new UsuarioAdmin("Administrador", "admin", "1234");
+
+    if (admin.login(user, pass)) {
+        usuarioActual = admin;
+        frame.dispose();
+        mostrarMenu();
+    } else {
+        JOptionPane.showMessageDialog(frame, "Credenciales incorrectas");
+    }
+});
+
 
         frame.add(panel);
         frame.setLocationRelativeTo(null);
