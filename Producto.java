@@ -12,9 +12,10 @@ public class Producto {
     public String getNombre() { return nombre; }
     public double getPrecio() { return precio; }
     public int getStock() { return stock; }
-    public void restarStock(int cantidad) throws Exception {
+
+    public void restarStock(int cantidad) throws StockInsuficienteException {
         if (cantidad > stock) {
-            throw new Exception("Stock insuficiente para " + nombre);
+            throw new StockInsuficienteException("Stock insuficiente para " + nombre);
         }
         stock -= cantidad;
     }
