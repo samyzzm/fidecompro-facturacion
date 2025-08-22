@@ -1,17 +1,17 @@
-public class Usuario {
+public abstract class Usuario {
+    protected String nombre;
     protected String usuario;
     protected String contrasena;
 
-    public Usuario(String usuario, String contrasena) {
+    public Usuario(String nombre, String usuario, String contrasena) {
+        this.nombre = nombre;
         this.usuario = usuario;
         this.contrasena = contrasena;
     }
 
-    public boolean login(String u, String c) {
-        return usuario.equals(u) && contrasena.equals(c);
-    }
+    public abstract boolean login(String usuario, String contrasena);
 
-    public String getRol() {
-        return "GENÉRICO";
+    public String getNombre() {
+        return nombre;
     }
 }

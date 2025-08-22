@@ -1,10 +1,12 @@
 public class UsuarioAdmin extends Usuario {
-    public UsuarioAdmin(String usuario, String contrasena) {
-        super(usuario, contrasena);
+
+    public UsuarioAdmin(String nombre, String usuario, String contrasena) {
+        super(nombre, usuario, contrasena);
     }
 
     @Override
-    public String getRol() {
-        return "ADMIN";
+    public boolean login(String usuario, String contrasena) {
+        System.out.println("Autenticando como ADMIN...");
+        return this.usuario.equals(usuario) && this.contrasena.equals(contrasena);
     }
 }

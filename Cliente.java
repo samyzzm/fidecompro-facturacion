@@ -10,7 +10,7 @@ public class Cliente {
     }
 
     public void guardar() {
-        // Aquí iría la lógica real para guardar cliente
+       
         JOptionPane.showMessageDialog(null, "Cliente '" + nombre + "' guardado exitosamente.");
     }
 
